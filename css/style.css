@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+body {
+  font-family: 'Alice', serif;
+  margin: 0px;
+  padding: 0px;
+  font-size: 16px; /* The font-size has been set to 16px by default*/
+}
+
+/*Navigation bar (navbar)'s styling:*/
+nav {
+  margin-bottom: 40px;
+  padding: 0px;
+  background-color: #0D7963;
+  height: 35px;
+  width: 100%;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0px;
+  height: 35px;
+  overflow: hidden;
+  /*background-color: #0D7963;*/
+  text-align: center;
+  align-content: center;
+}
+
+
+nav ul li {
+  display: inline; /* The best option so far has been "inline". Setting the display to "flex" does not work. Setting the display inside nav a does not work either.*/
+  font-weight: bold;
+  font-size: 20px;
+  /*margin: 0 5px;*/
+  text-decoration: none;
+  margin: 0px;
+  padding: 30px 40px 15px 40px;
+  text-align: center;
+  font-family: 'Rubik', sans-serif;
+  height: 100px;
+  border-right: 1px solid #F3F5F5;
+}
+/* float: left does not work in this case */
+
+nav ul li a {
+  text-decoration: none;
+  /*color: #CCECE6;*/ /*This colour has been changed due to accessibility reasons*/
+  color: #FFFFF5;
+}
+
+
+nav ul li:last-child {
+  border-right: none;
+}
+
+
+nav a:hover,
+nav a:focus-within {
+  /*color: #790C22;*/ /*This colour has been changed due to accessibility reasons*/
+  color: #FFF919;
+  transition: 0.5s ease;
+}
+
+/*a:focus-within has been included due to accessibility reasons*/
+
+.active {
+  /*background-color: #3AA992;*/
+  /*Changed due to accessibility reasons*/
+  background-color: #316C91;
+}
+
+/*Cover image and h1's styling*/
+.cover-image {
+  position: relative; 
+  height: 255px;
+  width: 100%;
+  display: block;
+}
+
+.cover-image::before {
+  content: '';
+  background-image: url(../images/fondo.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.5;
+  margin-top: -33px;
+}
+/*The only way to properly change the cover-image's picture's opacity without
+changing the opacity of the text that goes on top has been to create a pseudo class. Otherwise,
+if the pseudo class is not used, the opacity of all the elements inside the div is modified */
+
+h1 {
+  position: relative; /*If the position is not set to relative, the cover image appears on top of the text*/
+  color: #000000;
+  font-size: 3rem;
+  line-height: 2.5rem;
+  text-align: center;
+  font-family: 'Rubik', sans-serif;
+  vertical-align: middle;
+}
+
+h1 + p {
+  position: relative;
+  color: #000000;
+  font-size: 1rem;
+  line-height: 2.5rem;
+  text-align: center;
+  font-family: 'Rubik', sans-serif;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+/*Main's styling*/
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background-color: #F3F5F5;
+  padding: 10px;
+  border-radius: 30px;
+}
+
+@media screen and (max-width: 1200px) {
+.container {
+  border-radius: 0px;
+  padding: 10px;
+  max-width: 100%;
+}
+}
+
+h2 {
+  text-shadow:
+  1px 1px 1px #FF0000,
+  2px 2px 1px #FF0000;
+  font-size: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-indent: 2rem
+
+}
+
+.article-p {
+  margin: 0px;
+  padding: 0px;
+  line-height: 1.75;
+  margin-bottom: 20px;
+  text-indent: 2rem;
+}
+
+.book {
+  font-style: italic;
+}
+
+.author {
+  /*color:#FF0000*/ /*Changed due to accessibility reasons*/
+  color: #B43636;
+}
+
+.blockquote-author {
+  color:#FFF917
+} /*This class has been added due to accessibility reasons, as there was not enough
+contrast if the original colour was used*/
+
+.author-sub-h1 {
+  color: #690003; /*This class has been added due to accessibility reasons, as there was not enough
+contrast if the original colour was used*/
+}
+
+.p-abbr,
+.blockquote-abbr {
+  font-weight: bolder;
+  font-size: 18px;
+}
+
+.place {
+  font-weight: 900;
+}
+
+q {
+  quotes: "«" "»";
+  font-style: italic;
+}
+
+q::before {
+  content: open-quote;
+}
+
+q::after {
+  content: close-quote;
+}
+
+/*Blockquote's styling*/
+blockquote {
+  /*background-image: linear-gradient(105deg, rgb(58 169 146 / 100%) 39%, rgb(254 255 255 / 100%) 96%);*/
+  /*The background gradient has been changed due to accessibility reasons*/
+  background-image: linear-gradient(105deg, rgb(40 120 102 / 100%) 39%, rgb(78 119 145 / 100%) 96%);
+  border-left: 8px solid #790C22;
+  padding: 30px;
+  position: relative;
+}
+
+.blockquote-text {
+  quotes: '\201c' '\201d';
+  position: relative;
+  padding: 0 20px;
+  font-style: italic;  
+  text-align: right;
+  color: #ffffff;
+  line-height: 25px;
+  margin: 0px 20px;
+}
+
+.blockquote-text::before {
+  content: open-quote;
+  position: absolute;
+  font-weight: bold;
+  font-size: 66px;
+  /*color: #cccccc;*/ /*Changed due to accessibility reasons*/
+  color: #FFFFF1;
+  font-family: 'Alice';
+  margin-left: -50px;
+  margin-top: 10px;
+}
+
+.blockquote-text::after {
+  content: close-quote;
+  position: absolute;
+  font-weight: bold;
+  font-size: 66px;
+  /*color: #cccccc;*/ /*Changed due to accessibility reasons*/
+  color: #FFFFF1;
+  font-family: 'Alice';
+  margin-left: 0px;
+  margin-top: 10px;
+}
+
+
+/**Figures and images' styling**/
+figure {
+  display: block;
+  margin: auto;
+  max-width: 560px;
+  width: 100%;
+  padding: 5px 0px 20px 0px;
+}
+
+img {
+  max-width: 560px;
+  width: 100%;
+  box-shadow: 5px 5px 12px;
+}
+
+figcaption {
+  text-align: center;
+  margin-top: 15px;
+  font-style: italic;
+}
+
+/**UL Styling**/
+.index-ul li {
+  list-style-type: none;
+  line-height: 1.75;
+  padding-left: 2rem;
+  background-image: url(../images/world.png);
+  background-repeat: no-repeat;
+  background-position: 0 3px;
+  margin-bottom: 10px;
+}
+
+.ethics-ul li {
+  list-style-type: none;
+  line-height: 1.75;
+  padding-left: 2rem;
+  background-image: url(../images/e-book.png);
+  background-repeat: no-repeat;
+  background-position: 0 3px;
+  margin-bottom: 10px;
+}
+
+/*References section's styling*/
+h3 {
+  text-indent: 2rem;
+}
+
+.references-work {
+  border-left: 3px solid #790C22;
+  margin-left: 5rem;
+}
+
+.references-work-text {
+  font-style: italic;
+  padding-left: 1rem;
+}
+
+
+/*Footer's styling*/
+footer {
+  background-color: #0D7963;
+  margin: auto;
+  width: 100%;
+  padding: 20px 0px 15px 0px;
+  justify-content: center;
+  height: 100px;
+}
+
+footer p {
+  font:
+    normal normal normal normal 14px 'Alice',
+    serif;
+  color: #ffffff;
+  padding: 0px;
+  text-align: center;
+}
+
+footer abbr {
+  font-weight: bold;
+}
+
+.footer-extract-reference {
+  font-style: italic;
+}
+
+footer p a {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.effects-link {
+  font-style: italic;
+}
+
+footer p a:hover,
+footer p a:focus-within {
+  color:#FFF919; 
+  transition: 0.5s;
+}
+
+/*a:focus-within has been included due to accessibility reasons*/
+
+.html-css-author {
+  font-style: italic;
+}
+
+/*In the original picture reference, the IN3 abbreviation featured for the Ethics' footer
+did not have any text decoration. As a personal preference for homogeneous design, 
+I have included the text decoration anyways, so that it matched
+the Index page's footer. However, it would only be necessary to include 
+the following CSS snippet in order to remove the decoration from the Ethics' footer abbr.: 
+
+.footer-abbr-ethics {
+  text-decoration: none;
+} */
