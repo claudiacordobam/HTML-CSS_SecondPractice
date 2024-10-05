@@ -5,8 +5,8 @@ Just like in the [first practical exercise](https://github.com/claudiacordobam/H
 required students to create a design that was WCAG-compliant. The colour contrasts, thus, were fixed, so that all colour pairings had a contrast of a minimum of 4.5. Some of the design adaptations that were made in order to take into
 account the Accessibility Guidelines were:
 
-📝 Alternative texts were added to descrive relevant non-textual content </br>
-📝 The :focus-within CSS pseudo-class was included in order to make the :hover elements inclusive for keyboard users</br>
-📝 An HTML language attribute was included in those parts of the page that incorporate fragments in Spanish or Catalan</br>
+- Alternative texts were added to descrive relevant non-textual content </br>
+- The `:focus-within` CSS pseudo-class was included in order to make the `:hover` elements inclusive for keyboard users</br>
+- An HTML language attribute was included in those parts of the page that incorporate fragments in Spanish or Catalan</br>
 
 Please, kindly note that all the content was provided by the University. The original authors of the pictures and the text, therefore, own all copyrights.
